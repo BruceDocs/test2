@@ -26,6 +26,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+        working-directory: myExpressApp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,4 +54,4 @@ jobs:
           app-name: 'brucebackend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_512A7EE536A34A379FFB415BB7CBC41F }}
-          package: .
+          package: myExpressApp
